@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Syne";
+  src: url(assets/syne-extra.woff), url(assets/syne-extra.woff2);
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url(assets/syne-regular.woff), url(assets/syne-regular.woff2);
+}
+
+body {
+  font-family: Syne;
+  font-size: 32px;
+  line-height: 1.25;
+  background-color: #f5e6d9;
+  color: #15403d;
+  margin: 240px auto 200px auto;
+  max-width: 1120px;
+  transition: background-color 1s;
+}
+
+p {
+  font-family: Syne Extra;
+  margin-top: 24px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #e5745d;
+}
+
+h3 {
+  font-family: "Syne";
+  font-size: 32px;
+  line-height: 40px;
+  color: #15403d;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  z-index: 1;
+}
+
+header img {
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.36, 0, 0.66, -0.56);
+}
+
+.small {
+  transform: scale(0.5);
+}
+
+section {
+  margin: 80px 0 80px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section div {
+  padding: 64px;
+  position: relative;
+}
+
+section img {
+  position: relative;
+}
+
+/* Flipping the order of the section content */
+section:nth-child(odd) {
+  flex-direction: row-reverse;
+}
