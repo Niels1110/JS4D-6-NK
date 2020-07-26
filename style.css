@@ -1,3 +1,12 @@
+@keyframes spin {
+  0% {
+    /* Rotate the shape from the middle */
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 @font-face {
   font-family: "Syne";
   src: url(assets/syne-extra.woff), url(assets/syne-extra.woff2);
@@ -16,7 +25,11 @@ body {
   color: #15403d;
   margin: 240px auto 200px auto;
   max-width: 1120px;
+
+  /* Add transistion to bg when changing it from JS */
   transition: background-color 1s;
+
+  overflow: hidden;
 }
 
 p {
@@ -73,4 +86,23 @@ section img {
 /* Flipping the order of the section content */
 section:nth-child(odd) {
   flex-direction: row-reverse;
+}
+
+/* Anchoring the stamps div in the middles of the page
+so the stamps keep their position on resize  */
+div.stamps {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 50%;
+}
+
+/* When adding the stamps via JS, we want to make sure,
+they have a position absoute and they are centered at the point
+of the click */
+div.stamps img {
+  position: absolute;
+  transform: translateX(-50%, -50%);
+  animation: spin 30s linear infinite;
+  z-index: 99;
 }
