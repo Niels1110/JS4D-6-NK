@@ -29,7 +29,7 @@ body {
   /* Add transistion to bg when changing it from JS */
   transition: background-color 1s;
 
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 p {
